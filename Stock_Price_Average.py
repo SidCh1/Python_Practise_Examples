@@ -45,7 +45,7 @@ def calculate_moving_average(prices, window_size):
         window_prices = prices[i : window_size + i]
         print(window_prices)
         if len(window_prices) == window_size:
-            result.append(np.average(window_prices))
+            result.append(float(np.average(window_prices)))
         else:
             print("something went wrong with window sizes")
     return result
@@ -58,7 +58,7 @@ print(moving_avg_prices)
 
 # ===================================================================================================
 
-# Solution 1: (optimal)
+# Solution 2: (optimal)
 
 import numpy as np
 
