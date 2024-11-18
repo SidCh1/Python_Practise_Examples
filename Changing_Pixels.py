@@ -27,7 +27,7 @@
 
 # ===================================================================================================
 
-# Solution 1: (not efficient)
+# Solution 1: (not efficient) The solution below uses nested loops, which scale poorly with larger arrays.
 
 import numpy as np
 
