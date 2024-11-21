@@ -1,0 +1,55 @@
+---
+title: "Stabilizer Formalism in Quantum Computing"
+author: "Siddardha Chelluri"
+date: "2024-11-21"
+format: html
+execute:
+  enabled: true
+  jupyter: true
+---
+
+## Introduction
+
+The **stabilizer formalism** is a mathematical framework used in quantum error correction and quantum state manipulation. It enables the characterization of quantum states and operations using the stabilizer group, a subgroup of the Pauli group. This formalism is central to understanding **quantum error-correcting codes** like **Shor codes** and **Steane codes**.
+
+In this article, we will explore how stabilizer formalism applies to quantum systems and implement simple examples using **PennyLane**, a quantum computing library.
+
+## Mathematical Background
+
+Stabilizer formalism relies on the use of **Pauli operators** \( X \), \( Y \), and \( Z \), which act on qubits. A quantum state is said to be stabilized by a set of operators if applying them to the state does not change the state.
+
+### Stabilizer Group
+
+The **stabilizer group** is the set of operators that leave a given quantum state unchanged. The state \( \left| \psi \right\rangle \) is stabilized by a set of generators, for example:
+
+\[
+S = \langle X, Z \rangle
+\]
+
+Where \( X \) and \( Z \) are Pauli operators. These operators can be used to describe the **stabilizer code** that protects the quantum state.
+
+## Example: 3-Qubit Bit-Flip Code
+
+### Codewords for the 3-Qubit Code
+
+In the **3-qubit bit-flip code**, one logical qubit is encoded in three physical qubits. The codewords for this code are:
+
+```{math}
+| 0_L \rangle = | 000 \rangle
+| 1_L \rangle = | 111 \rangle
+
+```{python}
+# Importing necessary libraries
+import pennylane as qml
+import numpy as np
+
+# Creating a simple quantum circuit
+dev = qml.device("default.qubit", wires=2)
+
+@qml.qnode(dev)
+def bell_state():
+    qml.Hadamard(wires=0)
+    qml.CNOT(wires=[0, 1])
+    return qml.state()
+
+print(bell_state())
