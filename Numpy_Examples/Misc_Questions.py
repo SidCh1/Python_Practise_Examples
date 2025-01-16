@@ -59,9 +59,11 @@ print(arr3)
 # input: arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 # output: array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
 
-# arr4 = np.arange(10)
+arr4 = np.arange(10)
 
-# for arr in arr4:
-#     if arr % 2 != 0:
-#         arr.append(-1)
-# print(arr3)
+for arr in arr4:
+    if arr % 2 != 0:
+        arr4[arr] = -1
+print(arr4)
+
+# ===================================================================================================
