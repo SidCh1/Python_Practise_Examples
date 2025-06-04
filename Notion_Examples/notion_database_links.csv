@@ -1,0 +1,4 @@
+source_type,source_name,source_id,relation_name,target_name,target_id,link_type
+database,The habit tracker (1),1e763b73-60c9-80fd-89d7-de53080b2ac1,Records,your habit record,1e263b73-60c9-819f-9014-cfc8fa655aec,relation
+page,Habit Tracker TEST,1e263b73-60c9-8077-ac18-ea248e6a0aaa,(linked view),your habit record,1e263b73-60c9-819f-9014-cfc8fa655aec,linked_view
+page,Habit Tracker TEST,1e263b73-60c9-8077-ac18-ea248e6a0aaa,(linked view),The habit tracker (1),1e763b73-60c9-80fd-89d7-de53080b2ac1,linked_view
